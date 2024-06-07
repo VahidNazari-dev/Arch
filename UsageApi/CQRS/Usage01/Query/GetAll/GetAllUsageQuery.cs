@@ -1,7 +1,8 @@
-﻿using MediatR;
+﻿using Arch.CQRS.Query;
+using MediatR;
 
 namespace UsageApi.CQRS.Query;
 
-public class GetAllUsageQuery : IRequest<List<GetAllUsageResult>>
+public class GetAllUsageQuery : IQuery<List<GetAllUsageResult>>
 {
 }

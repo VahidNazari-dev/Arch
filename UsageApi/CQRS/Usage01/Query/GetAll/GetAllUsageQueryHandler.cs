@@ -1,12 +1,11 @@
-﻿using Arch.EFCore;
-using MediatR;
+﻿using Arch.CQRS.Query;
+using Arch.EFCore;
 using Microsoft.EntityFrameworkCore;
-using System.Net.WebSockets;
 using UsageApi.Domain;
 
 namespace UsageApi.CQRS.Query;
 
-public class GetAllUsageQueryHandler : IRequestHandler<GetAllUsageQuery, List<GetAllUsageResult>>
+public class GetAllUsageQueryHandler : IQueryHandler<GetAllUsageQuery, List<GetAllUsageResult>>
 {
     private readonly IUnitOfWork _unitOfWork;
 
@@ -17,12 +16,12 @@ public class GetAllUsageQueryHandler : IRequestHandler<GetAllUsageQuery, List<Ge
 
     public async Task<List<GetAllUsageResult>> Handle(GetAllUsageQuery request, CancellationToken cancellationToken)
     {
-        var result =await _unitOfWork.Repo<Usage01>().
-            Select(x=>new GetAllUsageResult
+        var result = await _unitOfWork.Repo<Usage01>().
+            Select(x => new GetAllUsageResult
             {
-                CreateDate= x.CreateDate,
-                Id= x.Id,
-                Title=x.Title
+                CreateDate = x.CreateDate,
+                Id = x.Id,
+                Title = x.Title
             })
             .ToListAsync();
         return result;

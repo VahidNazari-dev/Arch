@@ -1,10 +1,10 @@
-﻿using Arch.EFCore;
-using MediatR;
+﻿using Arch.CQRS.Command;
+using Arch.EFCore;
 using UsageApi.Domain;
 
 namespace UsageApi.CQRS.Commnand;
 
-public class CreateUsageCommandHandler : IRequestHandler<CreateUsageCommand>
+public class CreateUsageCommandHandler : ICommandHandler<CreateUsageCommand>
 {
     private readonly IUnitOfWork _unitOfWork;
 

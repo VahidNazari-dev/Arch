@@ -1,11 +1,11 @@
 ﻿using Arch.BaseApi;
+using Arch.CQRS.Command;
 using Arch.EFCore;
-using MediatR;
 using UsageApi.Domain;
 
 namespace UsageApi.CQRS.Commnand;
 
-public class UpdateUsageCommandHandler : IRequestHandler<UpdateUsageCommand>
+public class UpdateUsageCommandHandler : ICommandHandler<UpdateUsageCommand>
 {
     private readonly IUnitOfWork _unitOfWork;
 

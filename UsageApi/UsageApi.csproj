@@ -11,13 +11,13 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite" Version="7.0.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.9" />
-    <PackageReference Include="MediatR" Version="12.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Arch.BaseApi\Arch.BaseApi.csproj" />
+    <ProjectReference Include="..\Arch.CQRS\Arch.CQRS.csproj" />
     <ProjectReference Include="..\Arch.EFCore\Arch.EFCore.csproj" />
   </ItemGroup>
 
