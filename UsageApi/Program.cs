@@ -15,7 +15,6 @@ builder.Services.AddDbContext<UsageDbContext>(x => x.UseSqlServer(
                y.MigrationsAssembly(nameof(UsageApi)).EnableRetryOnFailure();
            }
        ));
-builder.Services.AddScoped<DbContext, UsageDbContext>();
 builder.Services.AddControllersWithViews(x => { x.Filters.Add(typeof(BaseExceptionHandler)); })
                 .AddJsonOptions(opt => opt.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase);
 builder.Services.AddControllers().AddJsonOptions(options =>
@@ -30,7 +29,8 @@ builder.Services.AddMediatR(cfg => {
     cfg.RegisterServicesFromAssembly(typeof(Program).Assembly);
     cfg.AddOpenBehavior(typeof(QueryCachedBehave<,>));//EnableQueryCaching
 });
-builder.Services.AddScoped<IUnitOfWork,UnitOfWork>();
+builder.Services.AddScoped<IUnitOfWork>(x=>
+new UnitOfWork(x.GetRequiredService<UsageDbContext>(), x.GetRequiredService<ILogger<UnitOfWork>>()));
 builder.Services.AddDistributedMemoryCache();
 var app = builder.Build();
 

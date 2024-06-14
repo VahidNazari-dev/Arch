@@ -22,7 +22,7 @@ namespace UsageApi.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var result = await _mediator.Send(new GetAllCachedUsageQuery());
+            var result = await _mediator.Send(new GetAllUsageQuery());
             return ApiOk(result);
         }
 

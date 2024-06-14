@@ -1,10 +1,10 @@
 ﻿
 namespace Arch.Domian;
 
-public class AggregateRoot<T>:Entity<T>
+public abstract class AggregateRoot<T>:Entity<T>
 {
 
 }
-public class AggregateRoot : AggregateRoot<Guid>
+public abstract class AggregateRoot : AggregateRoot<Guid>
 {
 }
