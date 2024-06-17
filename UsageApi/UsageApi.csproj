@@ -19,6 +19,7 @@
     <ProjectReference Include="..\Arch.BaseApi\Arch.BaseApi.csproj" />
     <ProjectReference Include="..\Arch.CQRS\Arch.CQRS.csproj" />
     <ProjectReference Include="..\Arch.EFCore\Arch.EFCore.csproj" />
+    <ProjectReference Include="..\Arch.Kafka\Arch.Kafka.csproj" />
   </ItemGroup>
 
 </Project>

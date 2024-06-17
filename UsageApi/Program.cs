@@ -1,6 +1,9 @@
 using Arch.BaseApi;
 using Arch.CQRS.Query.Behavior;
+using Arch.Domian;
 using Arch.EFCore;
+using Arch.Kafka.Register;
+using Confluent.Kafka;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json;
 using UsageApi.Data;
@@ -32,6 +35,20 @@ builder.Services.AddMediatR(cfg => {
 builder.Services.AddScoped<IUnitOfWork>(x=>
 new UnitOfWork(x.GetRequiredService<UsageDbContext>(), x.GetRequiredService<ILogger<UnitOfWork>>()));
 builder.Services.AddDistributedMemoryCache();
+builder.Services.AddKafka(p =>
+{
+    p.BootstrapServers = builder.Configuration.GetConnectionString("Kafka");
+},
+consumer =>
+{
+    consumer.OffsetResetType = AutoOffsetReset.Earliest;
+    consumer.GroupId = nameof(UsageApi);
+    consumer.BootstrappServers = builder.Configuration.GetConnectionString("Kafka");
+    consumer.EventAssemblies = new[] { typeof(Program).Assembly, typeof(Event).Assembly };
+    consumer.MaxPollIntervalMs = 50_000;
+    consumer.SessionTimeoutMs = 50_000;
+    consumer.PreMessageHandlingHandler = (provider, @event, headers) => ValueTask.CompletedTask;
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
