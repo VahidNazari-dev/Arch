@@ -10,8 +10,8 @@ public abstract class Enumeration : IComparable
     public int Id { get; private set; }
     protected Enumeration(int id, string name) => (Id, Name) = (id, name);
 
+    public  int ToInt() => Id;
     public override string ToString() => Name;
-
     public static IEnumerable<T> GetAll<T>() where T : Enumeration =>
         typeof(T).GetFields(BindingFlags.Public |
                             BindingFlags.Static |

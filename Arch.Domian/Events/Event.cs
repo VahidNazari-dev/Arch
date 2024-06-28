@@ -21,4 +21,12 @@ public class Event
             _eventName = value;
         }
     }
+    public DateTime Timestamp { get; set; } = DateTime.Now;
+    public int Version { get; set; }
+
+    public object EventMetadata { get; set; }
+
+    public virtual bool MustDispatch { get; set; }
+
+   
 }

@@ -2,6 +2,7 @@ using Arch.BaseApi;
 using Arch.CQRS.Query.Behavior;
 using Arch.Domian;
 using Arch.EFCore;
+using Arch.Kafka.Producer;
 using Arch.Kafka.Register;
 using Confluent.Kafka;
 using Microsoft.EntityFrameworkCore;
@@ -32,8 +33,6 @@ builder.Services.AddMediatR(cfg => {
     cfg.RegisterServicesFromAssembly(typeof(Program).Assembly);
     cfg.AddOpenBehavior(typeof(QueryCachedBehave<,>));//EnableQueryCaching
 });
-builder.Services.AddScoped<IUnitOfWork>(x=>
-new UnitOfWork(x.GetRequiredService<UsageDbContext>(), x.GetRequiredService<ILogger<UnitOfWork>>()));
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddKafka(p =>
 {
@@ -49,6 +48,9 @@ consumer =>
     consumer.SessionTimeoutMs = 50_000;
     consumer.PreMessageHandlingHandler = (provider, @event, headers) => ValueTask.CompletedTask;
 });
+builder.Services.AddScoped<IUnitOfWork>(x =>
+new UnitOfWork(x.GetRequiredService<IEventBus>(), x.GetRequiredService<UsageDbContext>(), x.GetRequiredService<ILogger<UnitOfWork>>()));
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

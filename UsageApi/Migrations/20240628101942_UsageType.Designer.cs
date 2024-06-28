@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using UsageApi.Data;
 
@@ -11,9 +12,11 @@ using UsageApi.Data;
 namespace UsageApi.Migrations
 {
     [DbContext(typeof(UsageDbContext))]
-    partial class UsageDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240628101942_UsageType")]
+    partial class UsageType
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -37,16 +40,6 @@ namespace UsageApi.Migrations
 
                     b.Property<bool>("Deleted")
                         .HasColumnType("bit");
-
-                    b.Property<int>("DispatchEventCount")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime?>("LastDispatchEventDate")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("LastDispatchedEventName")
-                        .HasMaxLength(150)
-                        .HasColumnType("nvarchar(150)");
 
                     b.Property<string>("Title")
                         .IsRequired()
