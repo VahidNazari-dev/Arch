@@ -7,8 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Arch", "Arch", "{D511F3E5-1
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arch.EFCore", "Arch.EFCore\Arch.EFCore.csproj", "{9455666C-0D79-497E-9E28-C6C52E0C00BE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arch.Domain", "Arch.Domian\Arch.Domain.csproj", "{776955FB-F2CF-40CB-A0BC-65270E490047}"
-EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arch.Domain", "Arch.Domain\Arch.Domain.csproj", "{776955FB-F2CF-40CB-A0BC-65270E490047}"
+EndProjec
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Usage", "Usage", "{C38FF0E2-9159-40C3-94D7-B80E63EF64F5}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UsageApi", "UsageApi\UsageApi.csproj", "{EFF072FE-78C7-480C-A10D-615EA36FBCC3}"
