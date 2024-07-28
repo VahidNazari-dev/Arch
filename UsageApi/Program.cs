@@ -1,6 +1,6 @@
 using Arch.BaseApi;
 using Arch.CQRS.Query.Behavior;
-using Arch.Domian;
+using Arch.Domain;
 using Arch.EFCore;
 using Arch.Kafka.Producer;
 using Arch.Kafka.Register;

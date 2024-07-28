@@ -1,5 +1,5 @@
 ﻿using Arch.CQRS.Command;
-using Arch.Domian;
+using Arch.Domain;
 using Arch.EFCore;
 using UsageApi.Domain;
 
