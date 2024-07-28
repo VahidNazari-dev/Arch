@@ -1,6 +1,6 @@
 ﻿
 
-namespace Arch.Domian;
+namespace Arch.Domain;
 
 public abstract class Entity
 {

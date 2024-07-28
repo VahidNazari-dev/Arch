@@ -1,9 +1,8 @@
 ﻿
 
-using Arch.Domian;
+using Arch.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using System.Threading;
 
 namespace Arch.EFCore;
 

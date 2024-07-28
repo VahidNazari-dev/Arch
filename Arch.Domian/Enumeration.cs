@@ -2,7 +2,7 @@
 
 using System.Reflection;
 
-namespace Arch.Domian;
+namespace Arch.Domain;
 
 public abstract class Enumeration : IComparable
 {

@@ -1,6 +1,6 @@
 ﻿
 
-using Arch.Domian;
+using Arch.Domain;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Arch.EFCore;

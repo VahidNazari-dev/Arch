@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Arch.Domian\Arch.Domian.csproj" />
+    <ProjectReference Include="..\Arch.Domian\Arch.Domain.csproj" />
   </ItemGroup>
 
 </Project>

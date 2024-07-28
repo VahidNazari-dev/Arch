@@ -1,4 +1,4 @@
-﻿using Arch.Domian;
+﻿using Arch.Domain;
 using Microsoft.EntityFrameworkCore;
 using System.Collections;
 using System.Linq.Expressions;

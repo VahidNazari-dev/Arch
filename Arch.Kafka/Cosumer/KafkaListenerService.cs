@@ -6,7 +6,7 @@ using Confluent.Kafka;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
-using Arch.Domian;
+using Arch.Domain;
 using System.Text;
 
 namespace Arch.Kafka.Cosumer;

@@ -1,6 +1,6 @@
 ﻿
 
-using Arch.Domian;
+using Arch.Domain;
 using Arch.Kafka.Attributes;
 using Arch.Kafka.Configs;
 using Arch.Kafka.Cosumer;

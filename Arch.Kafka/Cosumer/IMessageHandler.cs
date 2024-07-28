@@ -1,4 +1,4 @@
-﻿using Arch.Domian;
+﻿using Arch.Domain;
 
 namespace Arch.Kafka.Cosumer;
 

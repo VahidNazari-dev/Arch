@@ -1,11 +1,10 @@
 ﻿
 
-using Arch.Domian;
+using Arch.Domain;
 using Arch.Kafka.Attributes;
 using Arch.Kafka.Configs;
 using Confluent.Kafka;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using System.Reflection;
 using System.Text;

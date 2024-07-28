@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Arch", "Arch", "{D511F3E5-1
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arch.EFCore", "Arch.EFCore\Arch.EFCore.csproj", "{9455666C-0D79-497E-9E28-C6C52E0C00BE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arch.Domian", "Arch.Domian\Arch.Domian.csproj", "{776955FB-F2CF-40CB-A0BC-65270E490047}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arch.Domain", "Arch.Domian\Arch.Domain.csproj", "{776955FB-F2CF-40CB-A0BC-65270E490047}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Usage", "Usage", "{C38FF0E2-9159-40C3-94D7-B80E63EF64F5}"
 EndProject
@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arch.BaseApi", "Arch.BaseAp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arch.CQRS", "Arch.CQRS\Arch.CQRS.csproj", "{5C2A1D8B-8FC2-4A8A-9ABC-2BCDE06A8492}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Arch.Kafka", "Arch.Kafka\Arch.Kafka.csproj", "{D1396407-82A7-4553-9EBE-93476E4B1F7C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Arch.Kafka", "Arch.Kafka\Arch.Kafka.csproj", "{D1396407-82A7-4553-9EBE-93476E4B1F7C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,6 +1,6 @@
 ﻿
 
-using Arch.Domian;
+using Arch.Domain;
 
 namespace Arch.EFCore;
 

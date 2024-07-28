@@ -1,4 +1,4 @@
-﻿using Arch.Domian;
+﻿using Arch.Domain;
 using Confluent.Kafka;
 using System.Reflection;
 

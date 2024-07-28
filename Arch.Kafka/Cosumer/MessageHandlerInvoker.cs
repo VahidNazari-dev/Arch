@@ -1,6 +1,6 @@
 ﻿
 
-using Arch.Domian;
+using Arch.Domain;
 using Arch.Kafka.Configs;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
