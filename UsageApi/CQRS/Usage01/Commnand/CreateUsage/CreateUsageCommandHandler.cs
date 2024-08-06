@@ -22,7 +22,7 @@ public class CreateUsageCommandHandler : ICommandHandler<CreateUsageCommand,int>
         {
             Id = usage.Id,
         };
-//usage.AddEnvet(@event);
+         usage.AddEnvet(@event);
         _unitOfWork.Repo<Usage01>().Add(usage);
       return  await _unitOfWork.Save(usage,true,cancellationToken);
     }
