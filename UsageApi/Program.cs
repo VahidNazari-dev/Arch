@@ -1,5 +1,7 @@
 using Arch.BaseApi;
+using Arch.CQRS.Command.Behavior;
 using Arch.CQRS.Query.Behavior;
+using Arch.CQRS.Register;
 using Arch.Domain;
 using Arch.EFCore;
 using Arch.Kafka.Producer;
@@ -29,10 +31,7 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 );
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddMediatR(cfg => { 
-    cfg.RegisterServicesFromAssembly(typeof(Program).Assembly);
-    cfg.AddOpenBehavior(typeof(QueryCachedBehave<,>));//EnableQueryCaching
-});
+builder.Services.AddCQRS(true, true);
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddKafka(p =>
 {

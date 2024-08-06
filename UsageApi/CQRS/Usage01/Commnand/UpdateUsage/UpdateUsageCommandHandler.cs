@@ -5,7 +5,7 @@ using UsageApi.Domain;
 
 namespace UsageApi.CQRS.Commnand;
 
-public class UpdateUsageCommandHandler : ICommandHandler<UpdateUsageCommand>
+public class UpdateUsageCommandHandler : ICommandHandler<UpdateUsageCommand,int>
 {
     private readonly IUnitOfWork _unitOfWork;
 
@@ -14,14 +14,11 @@ public class UpdateUsageCommandHandler : ICommandHandler<UpdateUsageCommand>
         _unitOfWork = unitOfWork;
     }
 
-    public async Task Handle(UpdateUsageCommand request, CancellationToken cancellationToken)
+    public async Task<int> Handle(UpdateUsageCommand request, CancellationToken cancellationToken)
     {
-        var usage = _unitOfWork.Repo<Usage01>().FirstOrDefault(x=>x.Id==request.Id);
-        if (usage==null)
-        {
-            throw new ValidationException("وجود ندارد");
-        }
+        var usage = _unitOfWork.Repo<Usage01>().First(x=>x.Id==request.Id);
+       
         usage.UpdateTitle(request.Title);
-        await _unitOfWork.Save(usage);
+       return await _unitOfWork.Save(usage);
     }
 }

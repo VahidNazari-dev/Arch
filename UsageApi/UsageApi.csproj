@@ -6,17 +6,17 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Arch.BaseApi" Version="1.0.0" />
-    <PackageReference Include="Arch.CQRS" Version="1.0.0" />
-    <PackageReference Include="Arch.EFCore" Version="2.0.0" />
-    <PackageReference Include="Arch.Kafka" Version="2.0.0" />
-    <PackageReference Include="EntityFrameworkCore.SqlServer.JsonExtention" Version="2.0.0" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.9" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite" Version="7.0.9" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.9" />
-    <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.0" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Arch.BaseApi" Version="1.0.0" />
+		<PackageReference Include="Arch.EFCore" Version="2.0.0" />
+		<PackageReference Include="Arch.Kafka" Version="2.0.0" />
+		<PackageReference Include="Arch.CQRS" Version="1.2.0" />
+		<PackageReference Include="EntityFrameworkCore.SqlServer.JsonExtention" Version="2.0.0" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="7.0.9" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite" Version="7.0.9" />
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.9" />
+		<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.0" />
+		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+	</ItemGroup>
 
 </Project>

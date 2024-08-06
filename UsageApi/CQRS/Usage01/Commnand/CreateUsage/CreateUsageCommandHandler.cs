@@ -5,7 +5,7 @@ using UsageApi.Domain;
 
 namespace UsageApi.CQRS.Commnand;
 
-public class CreateUsageCommandHandler : ICommandHandler<CreateUsageCommand>
+public class CreateUsageCommandHandler : ICommandHandler<CreateUsageCommand,int>
 {
     private readonly IUnitOfWork _unitOfWork;
 
@@ -14,7 +14,7 @@ public class CreateUsageCommandHandler : ICommandHandler<CreateUsageCommand>
         _unitOfWork = unitOfWork;
     }
 
-    public async Task Handle(CreateUsageCommand request, CancellationToken cancellationToken)
+    public async Task<int> Handle(CreateUsageCommand request, CancellationToken cancellationToken)
     {
         var usage = new Usage01(request.Title, Usage01Type.Type01);
        
@@ -22,8 +22,8 @@ public class CreateUsageCommandHandler : ICommandHandler<CreateUsageCommand>
         {
             Id = usage.Id,
         };
-        usage.AddEnvet(@event);
+//usage.AddEnvet(@event);
         _unitOfWork.Repo<Usage01>().Add(usage);
-        await _unitOfWork.Save(usage,true,cancellationToken);
+      return  await _unitOfWork.Save(usage,true,cancellationToken);
     }
 }
