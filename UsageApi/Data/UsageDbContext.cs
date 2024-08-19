@@ -1,10 +1,12 @@
 ﻿using EntityFrameworkCore.SqlServer.JsonExtention;
 using Microsoft.EntityFrameworkCore;
+using UsageApi.Domain;
 
 namespace UsageApi.Data;
 
 public class UsageDbContext:DbContext
 {
+    public DbSet<Usage01> Usage01 { get; set; }
     public UsageDbContext(DbContextOptions<UsageDbContext> options) : base(options) { }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
