@@ -28,6 +28,7 @@ public class QueryCachedBehave<TQuery, TResult> : IPipelineBehavior<TQuery, TRes
                     (options) =>
                     {
                         options.AbsoluteExpiration = cached.AbsoluteExpiration;
+                        options.SlidingExpiration = cached.SlidingExpiration;
                         return next();
                     },
                     cts.Token);
@@ -39,6 +40,7 @@ public class QueryCachedBehave<TQuery, TResult> : IPipelineBehavior<TQuery, TRes
                     (options) =>
                     {
                         options.AbsoluteExpiration = cached.AbsoluteExpiration;
+                        options.SlidingExpiration = cached.SlidingExpiration;
                         return next();
                     },
                     cts.Token);

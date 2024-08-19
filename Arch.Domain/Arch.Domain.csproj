@@ -7,6 +7,7 @@
     <AssemblyVersion>2.0.0</AssemblyVersion>
     <FileVersion>2.0.0</FileVersion>
     <Version>2.0.0</Version>
+    <RepositoryUrl>https://github.com/VahidNazari-dev/Arch/tree/master/Arch.Domain</RepositoryUrl>
   </PropertyGroup>
 
 </Project>

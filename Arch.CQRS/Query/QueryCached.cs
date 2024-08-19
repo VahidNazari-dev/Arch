@@ -23,10 +23,11 @@ public class QueryCached<T> : IQuery<T>
 
     public virtual string GetKey()
     {
+        var exNames=new List<string>() { nameof(AbsoluteExpiration), nameof(SlidingExpiration),nameof(ReValidate) };
         var typeInfo = GetType();
         var props = typeInfo
             .GetProperties(BindingFlags.Instance | BindingFlags.Public)
-            .Where(t=>!t.Name.Contains(nameof(AbsoluteExpiration)))
+            .Where(t=> !exNames.Any(e=>t.Name.Contains(e)))
             .OrderByDescending(t => t.Name);
 
         if (!props.Any())

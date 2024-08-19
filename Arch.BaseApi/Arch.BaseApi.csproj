@@ -6,6 +6,7 @@
     <Nullable>enable</Nullable>
     <RepositoryUrl>https://github.com/VahidNazari-dev/Arch</RepositoryUrl>
     <IncludeSymbols>False</IncludeSymbols>
+    <RepositoryUrl>https://github.com/VahidNazari-dev/Arch/tree/master/Arch.BaseApi</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
