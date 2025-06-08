@@ -22,21 +22,20 @@ namespace UsageApi.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var result = await _mediator.Send(new GetAllCachedUsageQuery() { Id=1});
-            var result2 = await _mediator.Send(new GetAllCachedUsageQuery() { Id=2});
+            var result = await _mediator.Send(new GetAllUsageQuery());
             return ApiOk(result);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(CreateUsageCommand command)
+        public async Task<IActionResult> Create(CreateUsageCommand command,CancellationToken cancellationToken)
         {
-            await _mediator.Send(command);
+            await _mediator.Send(command, cancellationToken);
             return ApiOk();
         }
         [HttpPut]
-        public async Task<IActionResult> Update(UpdateUsageCommand command)
+        public async Task<IActionResult> Update(UpdateUsageCommand command, CancellationToken cancellationToken)
         {
-            await _mediator.Send(command);
+            await _mediator.Send(command, cancellationToken);
             return ApiOk();
         }
     }
